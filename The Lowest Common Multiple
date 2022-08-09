@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan= new Scanner(System.in);
+         int first= scan.nextInt();
+         int second= scan.nextInt();
+         int third= scan.nextInt();
+
+         int max= Math.max(Math.max(first,second),third);
+         if(first==0||second==0||third==0){
+             System.out.println("NA");
+         }
+   else {
+       int i=0;
+       boolean flag= true;
+
+       while(i<1000 && flag){
+           int lcm=max*(i+1);
+           if(lcm % first==0 && lcm % second==0 && lcm % third==0){
+               System.out.println("LCM is:  "+lcm);
+               flag= false;
+           }
+           else{
+               System.out.println("NA");
+           }
+           i++;
+       }
+         }
+
+
+    }
+}
