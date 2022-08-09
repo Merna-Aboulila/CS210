@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan= new Scanner(System.in);
+         int f= scan.nextInt();
+         int s= scan.nextInt();
+         int t= scan.nextInt();
+
+         int min= Math.min(Math.min(f,s),t);
+         int max= Math.max(Math.max(f,s),t);
+         int med=(f+s+t)-(min+max);
+
+         int result=0;
+             if(med-min>max-med){
+                result=min;
+             }
+             else{
+                 result=max;
+             }
+
+        System.out.println("The Outlier is: "+ result);
+    }
+}
