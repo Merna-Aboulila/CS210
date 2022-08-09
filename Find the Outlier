@@ -15,11 +15,15 @@ public class Main {
          int result=0;
              if(med-min>max-med){
                 result=min;
+                   System.out.println("The Outlier is: "+result);
+             }
+              else if(med-min<max-med){
+                 result=max;
+                 System.out.println("The Outlier is: "+result);
              }
              else{
-                 result=max;
+             //there is no oultier
+                 System.out.println("NA");
              }
-
-        System.out.println("The Outlier is: "+ result);
     }
 }
