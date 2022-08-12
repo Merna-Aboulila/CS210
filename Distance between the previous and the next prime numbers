@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan= new Scanner(System.in);
+        int input= scan.nextInt();
+
+        int distance=0;
+        if(input==0|| input==1){
+            System.out.println("The distance is: 2");
+        }
+        else{
+            int next= nextPrime(input);
+            int previous= previousPrime(input);
+            distance=next-previous;
+            System.out.println("The distance is: " + distance);
+                }
+
+    }
+    public static int nextPrime(int input){
+        // this method reterns the next prime number 
+        int n= input+1;
+        int nextPrime=n;
+        if (input == 3){
+            nextPrime=5;
+        }
+        for(int i=2; i<= n/2; i++){
+            if (n % i==0){
+              i=2;
+              n++;
+            }
+            else if ( i == n/2 ){
+                nextPrime=n;
+            }
+        }
+        return nextPrime;
+    }
+
+    public static int previousPrime(int input){
+    // if the input is a prime number then the output of this method will be the input itself
+    // otherwise it will find the previous one and output it.
+        int n= input;
+        int previousPrime=n;
+        for(int i=2; i <= n/2; i++){
+            if (n % i==0){
+                i=2;
+                n--;
+            }
+            else if ( i == n/2 ){
+                previousPrime=n;
+            }
+        }
+        return previousPrime;
+    }
+}
